@@ -1,0 +1,12 @@
+ngx_addon_name=ngx_http_eflv_module
+HTTP_MODULES="$HTTP_MODULES ngx_http_eflv_module"
+
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
+                $ngx_addon_dir/src/ngx_http_eflv_handler.h \
+                $ngx_addon_dir/src/ngx_http_eflv_module.h \
+                "
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
+                $ngx_addon_dir/src/ngx_http_eflv_handler.c \
+                $ngx_addon_dir/src/ngx_http_eflv_module.c \
+                "
