@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) ywby
  * Copyright (C) xunen <leixunen@gmail.com>
@@ -767,7 +766,7 @@ ngx_http_tflv_handler(ngx_http_request_t *r)
 	}
 
 	//r->allow_ranges = 1;
-	r->allow_ranges = 0;
+	r->allow_ranges = 1;
 	rc = ngx_http_send_header(r);
 	if (rc == NGX_ERROR || rc > NGX_OK || r->header_only) {
 		return rc;
@@ -979,7 +978,7 @@ ngx_http_sflv_handler(ngx_http_request_t *r)
 		r->headers_out.content_length_n =sizeof(ngx_flv_header) - 1 + end -start + video_size + audio_size;
 
 		//r->allow_ranges = 1;
-		r->allow_ranges = 0;
+		r->allow_ranges = 1;
 		rc = ngx_http_send_header(r);
 		if (rc == NGX_ERROR || rc > NGX_OK || r->header_only) {
 			return rc;
@@ -1032,7 +1031,7 @@ ngx_http_sflv_handler(ngx_http_request_t *r)
 		}
 
 		//r->allow_ranges = 1;
-		r->allow_ranges = 0;
+		r->allow_ranges = 1;
 		rc = ngx_http_send_header(r);
 		if (rc == NGX_ERROR || rc > NGX_OK || r->header_only) {
 			return rc;
